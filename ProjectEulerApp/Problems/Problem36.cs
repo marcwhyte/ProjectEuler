@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 
 namespace ProjectEulerApp.Problems
 {
-    class Problem5 : IProblem
+    class Problem36 : IProblem
     {
-        private string _name = "Problem 5";
-        private string _title = "Smallest multiple";
-        private string _description = "2520 is the smallest number that can be divided by each of the numbers from 1 to 10 without any remainder."
+        private string _name = "Problem 36";
+        private string _title = "Double-base palindromes";
+        private string _description = "The decimal number, 585 = 10010010012 (binary), is palindromic in both bases."
             + Environment.NewLine + Environment.NewLine
-            + "What is the smallest positive number that is evenly divisible by all of the numbers from 1 to 20?";
-        private string _requiredAnswer = "232792560";
+            + "Find the sum of all numbers, less than one million, which are palindromic in base 10 and base 2."
+            + Environment.NewLine + Environment.NewLine
+            + "(Please note that the palindromic number, in either base, may not include leading zeros).";
+        string _requiredAnswer = "872187";
         private BigInteger _myAnswer;
 
         public string Name
@@ -49,20 +51,17 @@ namespace ProjectEulerApp.Problems
 
         public BigInteger GetAnswer()
         {
-            bool isAnswer = false;
-            BigInteger answer = 2520;
+            BigInteger answer = 0;
 
-            while (!isAnswer)
+            int i = 1;
+
+            while (i < 1000000)
             {
-                isAnswer = true;
-                answer++;
-                for (int i = 1; i <= 20; i++)
+                if (UtilityMethods.IsPalindrome(i) && UtilityMethods.IsPalindrome(UtilityMethods.ToBinary(i)))
                 {
-                    if (answer % i != 0)
-                    {
-                        isAnswer = false;
-                    }
+                    answer += i;
                 }
+                i++;
             }
 
             return answer;

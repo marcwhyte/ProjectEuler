@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Numerics;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,12 +13,12 @@ namespace ProjectEulerApp.Problems
         string Name { get; set; }
         string Title { get; set; }
         string Description { get; set; }
-        long RequiredAnswer { get; set; }
-        long MyAnswer { get; set; }
+        string RequiredAnswer { get; set; }
+        BigInteger MyAnswer { get; set; }
         #endregion
 
         #region Methods
-        long GetAnswer();
+        BigInteger GetAnswer();
         #endregion
     }
 }

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,8 +14,8 @@ namespace ProjectEulerApp.Problems
         private string _description = "By listing the first six prime numbers: 2, 3, 5, 7, 11, and 13, we can see that the 6th prime is 13."
             + Environment.NewLine + Environment.NewLine
             + "What is the 10 001st prime number?";
-        private long _requiredAnswer = 104743;
-        private long _myAnswer;
+        private string _requiredAnswer = "104743";
+        private BigInteger _myAnswer;
 
         public string Name
         {
@@ -34,21 +35,21 @@ namespace ProjectEulerApp.Problems
             set { _title = value; }
         }
 
-        public long RequiredAnswer
+        public string RequiredAnswer
         {
             get { return _requiredAnswer; }
             set { _requiredAnswer = value; }
         }
 
-        public long MyAnswer
+        public BigInteger MyAnswer
         {
             get { return _myAnswer; }
             set { _myAnswer = value; }
         }
 
-        public long GetAnswer()
+        public BigInteger GetAnswer()
         {
-            long answer = 0;
+            BigInteger answer = 0;
             int i = 0;
             bool isPrime = true;
 
@@ -56,10 +57,10 @@ namespace ProjectEulerApp.Problems
             {
                 answer++;
 
-                for (long j = 0; j <= answer; j++)
+                for (int j = 0; j <= answer; j++)
                 {
                     isPrime = true; // Move initialization to here
-                    for (long k = 2; k < Math.Sqrt(j); k++) // you actually only need to check up to sqrt(i)
+                    for (int k = 2; k < Math.Sqrt(j); k++) // you actually only need to check up to sqrt(i)
                     {
                         if (j % k == 0) // you don't need the first condition
                         {

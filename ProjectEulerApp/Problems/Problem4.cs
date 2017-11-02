@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -13,8 +14,8 @@ namespace ProjectEulerApp.Problems
         private string _description = "A palindromic number reads the same both ways. The largest palindrome made from the product of two 2-digit numbers is 9009 = 91 × 99."
             + Environment.NewLine + Environment.NewLine
             + "Find the largest palindrome made from the product of two 3-digit numbers.";
-        private long _requiredAnswer = 906609;
-        private long _myAnswer;
+        private string _requiredAnswer = "906609";
+        private BigInteger _myAnswer;
         public string Name
         {
             get { return _name; }
@@ -33,24 +34,24 @@ namespace ProjectEulerApp.Problems
             set { _title = value; }
         }
 
-        public long RequiredAnswer
+        public string RequiredAnswer
         {
             get { return _requiredAnswer; }
             set { _requiredAnswer = value; }
         }
 
-        public long MyAnswer
+        public BigInteger MyAnswer
         {
             get { return _myAnswer; }
             set { _myAnswer = value; }
         }
 
-        public long GetAnswer()
+        public BigInteger GetAnswer()
         {
-            long answer = 0;
+            BigInteger answer = 0;
             int a = 999;
             int b = 999;
-            long product;
+            BigInteger product;
             string productString;
             string reverseProductString;
 

@@ -26,6 +26,23 @@ namespace ProjectEulerApp
             problems.Add(problem6.Name, problem6);
             Problem7 problem7 = new Problem7();
             problems.Add(problem7.Name, problem7);
+
+            Problem25 problem25 = new Problem25();
+            problems.Add(problem25.Name, problem25);
+
+            Problem30 problem30 = new Problem30();
+            problems.Add(problem30.Name, problem30);
+
+            Problem34 problem34 = new Problem34();
+            problems.Add(problem34.Name, problem34);
+
+            Problem36 problem36 = new Problem36();
+            problems.Add(problem36.Name, problem36);
+            Problem37 problem37 = new Problem37();
+            problems.Add(problem37.Name, problem37);
+
+            Problem44 problem44 = new Problem44();
+            problems.Add(problem44.Name, problem44);
             return problems;
         }
     }
