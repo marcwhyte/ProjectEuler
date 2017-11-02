@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEulerApp.Problems
 {
-    class Problem36 : IProblem
+    class Problem36 : UtilityMethods, IProblem
     {
         private string _name = "Problem 36";
         private string _title = "Double-base palindromes";
@@ -57,7 +53,7 @@ namespace ProjectEulerApp.Problems
 
             while (i < 1000000)
             {
-                if (UtilityMethods.IsPalindrome(i) && UtilityMethods.IsPalindrome(UtilityMethods.ToBinary(i)))
+                if (IsPalindrome(i) && IsPalindrome(ToBinary(i)))
                 {
                     answer += i;
                 }

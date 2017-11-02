@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEulerApp.Problems
 {
-    class Problem25 :IProblem
+    class Problem25 :UtilityMethods, IProblem
     {
         private string _name = "Problem 25";
         private string _title = "1000-digit Fibonacci number";
@@ -65,7 +61,7 @@ namespace ProjectEulerApp.Problems
             BigInteger previous2 = 1;
             BigInteger i = 3;
 
-            while (UtilityMethods.NumDigits(f) < 1000)
+            while (NumDigits(f) < 1000)
             {
                 f = previous1 + previous2;
 

@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEulerApp.Problems
 {
-    class Problem34 : IProblem
+    class Problem34 : UtilityMethods, IProblem
     {
         private string _name = "Problem 34";
         private string _title = "Digit factorials";
@@ -52,16 +49,16 @@ namespace ProjectEulerApp.Problems
         public BigInteger GetAnswer()
         {
             BigInteger sum = 0;
-            BigInteger test = UtilityMethods.Factorial(2);
+            BigInteger test = Factorial(2);
             BigInteger number = 3;
-            BigInteger limit = 8 * UtilityMethods.Factorial(9);
+            BigInteger limit = 8 * Factorial(9);
             while (number < limit)
             {
-                List<int> digits = UtilityMethods.GetDigits(number);
+                List<int> digits = GetDigits(number);
                 BigInteger sumDigits = 0;
                 foreach (int digit in digits)
                 {
-                    sumDigits += UtilityMethods.Factorial(digit);
+                    sumDigits += Factorial(digit);
                 }
 
                 if (sumDigits == number)

@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEulerApp.Problems
 {
-    class Problem37 : IProblem
+    class Problem37 : UtilityMethods, IProblem
     {
         private string _name = "Problem 37";
         private string _title = "Multiples of 3 and 5";
@@ -57,7 +53,7 @@ namespace ProjectEulerApp.Problems
 
             while (count < 11)
             {
-                if (UtilityMethods.IsPrime(number))
+                if (IsPrime(number))
                 {
                     bool cont = true;
                     int originalNumber = number;
@@ -65,7 +61,7 @@ namespace ProjectEulerApp.Problems
                     while (number > 0)
                     {
                         number = number / 10;
-                        if (number > 0 && !UtilityMethods.IsPrime(number))
+                        if (number > 0 && !IsPrime(number))
                         {
                             cont = false;
                             break;
@@ -76,8 +72,8 @@ namespace ProjectEulerApp.Problems
                     number = originalNumber;
                     while (number > 0 && cont == true)
                     {
-                        number = Convert.ToInt32(number % Math.Pow(10, UtilityMethods.NumDigits(number) - 1));
-                        if (number > 0 && !UtilityMethods.IsPrime(number))
+                        number = Convert.ToInt32(number % Math.Pow(10, NumDigits(number) - 1));
+                        if (number > 0 && !IsPrime(number))
                         {
                             cont = false;
                             break;

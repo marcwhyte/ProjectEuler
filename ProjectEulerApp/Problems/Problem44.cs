@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEulerApp.Problems
 {
-    class Problem44 : IProblem
+    class Problem44 : UtilityMethods, IProblem
     {
         private string _name = "Problem 44";
         private string _title = "Pentagon numbers";
@@ -65,7 +61,7 @@ namespace ProjectEulerApp.Problems
                 for (int j = i - 1; j > 0; j--)
                 {
                     int m = j * (3 * j - 1) / 2;
-                    if (UtilityMethods.IsPentagonal(n - m) && UtilityMethods.IsPentagonal(n + m))
+                    if (IsPentagonal(n - m) && IsPentagonal(n + m))
                     {
                         answer = Math.Abs(n - m);
                         notFound = false;

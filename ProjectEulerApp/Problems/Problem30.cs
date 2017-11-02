@@ -1,13 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Numerics;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjectEulerApp.Problems
 {
-    class Problem30 : IProblem
+    class Problem30 : UtilityMethods, IProblem
     {
         private string _name = "Problem 30";
         private string _title = "Digit fifth powers";
@@ -57,7 +54,7 @@ namespace ProjectEulerApp.Problems
 
         public BigInteger GetAnswer()
         {
-            List<int> test = UtilityMethods.GetDigits(123456);
+            List<int> test = GetDigits(123456);
 
             int power = 5;
             BigInteger max = 4 * BigInteger.Pow(9, power);
@@ -67,7 +64,7 @@ namespace ProjectEulerApp.Problems
 
             while (number < max)
             {
-                List<int> digits = UtilityMethods.GetDigits(number);
+                List<int> digits = GetDigits(number);
                 BigInteger sumOfFourthPowers = 0;
                 foreach (int digit in digits)
                 {

@@ -1,0 +1,9 @@
+
+.vs/ProjectEulerApp/v15/.suo
+*.ide
+*.exe
+*.pdb
+*.cache
+ProjectEulerApp/obj/Debug/ProjectEulerApp.csproj.FileListAbsolute.txt
+*.Cache
+*.lref
