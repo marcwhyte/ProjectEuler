@@ -8,7 +8,7 @@
             <Setter Property="HorizontalAlignment" Value="Center"/>
             <Setter Property="Orientation" Value="Horizontal"/>
         </Style>
-        <Style TargetType="TextBlock">
+        <Style TargetType="Image">
             <Setter Property="Margin" Value="5"/>
         </Style>
         <Style TargetType="ComboBox">
@@ -30,7 +30,6 @@
         <ObjectDataProvider x:Key="Problems" 
                             ObjectType="{x:Type local:ProblemsCollection}"
                             MethodName="GetProblems"/>
-        
     </Window.Resources>
     <Grid Margin="10">
         <Grid.Resources>
@@ -46,10 +45,6 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <!--<TextBlock x:Name="PageTitle_TextBlock" Grid.Row="0" HorizontalAlignment="Center"
-                   FontWeight="Bold" FontSize="24">
-            Project Euler
-        </TextBlock>-->
         <Image Source="Images\pe_logo_default.png" Width="200"/>
         <StackPanel Grid.Row="1">
             <Label Content="Problem: "/>
