@@ -7,3 +7,9 @@
 ProjectEulerApp/obj/Debug/ProjectEulerApp.csproj.FileListAbsolute.txt
 *.Cache
 *.lref
+ProjectEulerApp/obj/Debug/MainWindow.baml
+ProjectEulerApp/obj/Debug/MainWindow.baml
+ProjectEulerApp/obj/Debug/MainWindow.g.cs
+ProjectEulerApp/obj/Debug/MainWindow.g.i.cs
+ProjectEulerApp/obj/Debug/ProjectEulerApp.g.resources
+ProjectEulerApp/obj/Debug/ProjectEulerApp_Content.g.i.cs

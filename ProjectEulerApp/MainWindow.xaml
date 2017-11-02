@@ -16,6 +16,9 @@
         </Style>
         <Style TargetType="Label">
             <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontFamily" Value="Courier New"/>
+            <Setter Property="FontWeight" Value="Heavy"/>
+            <Setter Property="Foreground" Value="#666"/>
         </Style>
         <Style TargetType="TextBox">
             <Setter Property="Margin" Value="5"/>
@@ -43,10 +46,11 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBlock x:Name="PageTitle_TextBlock" Grid.Row="0" HorizontalAlignment="Center"
+        <!--<TextBlock x:Name="PageTitle_TextBlock" Grid.Row="0" HorizontalAlignment="Center"
                    FontWeight="Bold" FontSize="24">
             Project Euler
-        </TextBlock>
+        </TextBlock>-->
+        <Image Source="Images\pe_logo_default.png" Width="200"/>
         <StackPanel Grid.Row="1">
             <Label Content="Problem: "/>
             <ComboBox x:Name="Problem_ComboBox" Width="100"
@@ -57,7 +61,8 @@
                       SelectionChanged="Problem_ComboBox_SelectionChanged"/>
         </StackPanel>
         <Label x:Name="ProblemTitle_Label" Grid.Row="2"
-               FontWeight="DemiBold" FontSize="16"
+               FontFamily="Arial" FontWeight="DemiBold" FontSize="16" 
+               Foreground="#6b4e3d"
                Content="{Binding Title}"/>
         <TextBox x:Name="ProblemDescription_TextBox" Grid.Row="3"
                  Height="200" 
