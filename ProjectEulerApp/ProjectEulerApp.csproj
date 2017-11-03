@@ -56,11 +56,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Problems\Problem10.cs" />
+    <Compile Include="Problems\Problem11.cs" />
+    <Compile Include="Problems\Problem12.cs" />
+    <Compile Include="Problems\Problem13.cs" />
+    <Compile Include="Problems\Problem3.cs" />
     <Compile Include="Problems\Problem30.cs" />
     <Compile Include="Problems\Problem34.cs" />
     <Compile Include="Problems\Problem36.cs" />
     <Compile Include="Problems\Problem37.cs" />
     <Compile Include="Problems\Problem44.cs" />
+    <Compile Include="Problems\Problem8.cs" />
+    <Compile Include="Problems\Problem9.cs" />
     <Compile Include="UtilityMethods.cs" />
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -112,7 +119,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Resource Include="Images\pe_logo_default.png" />
+=======
+    <Resource Include="Problems\Files\Problem11.txt" />
+>>>>>>> 95942f3978b5a0118fea85d395065e37e1905188
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Numerics;
 using System.Text;
@@ -123,6 +125,88 @@ namespace ProjectEulerApp
         {
             double penTest = (Math.Sqrt(1 + 24 * number) + 1.0) / 6.0;
             return penTest == ((int)penTest);
+        }
+
+        public static int[] ESieve(int upperLimit)
+        {
+            int sieveBound = (int)(upperLimit - 1) / 2;
+            int upperSqrt = ((int)(Math.Sqrt(upperLimit) - 1) / 2);
+
+            BitArray PrimeBits = new BitArray(sieveBound + 1, true);
+
+            for (int i = 1; i <= upperSqrt; i++)
+            {
+                if (PrimeBits.Get(i))
+                {
+                    for (int j = i * 2 * (i + 1); j <= sieveBound; j+= 2 * i + 1)
+                    {
+                        PrimeBits.Set(j, false);
+                    }
+                }
+            }
+
+            List<int> numbers = new List<int>((int)(upperLimit / (Math.Log(upperLimit) - 1.08366)));
+            numbers.Add(2);
+
+            for (int i = 1; i <= sieveBound; i++)
+            {
+                if (PrimeBits.Get(i))
+                {
+                    numbers.Add(2 * i + 1);
+                }
+            }
+
+            return numbers.ToArray();
+        }
+
+        public static int[,] readInputTo2DArray(string filename)
+        {
+            int lines = 0;
+            string line;
+            string[] linePieces;
+
+            StreamReader r = new StreamReader(filename);
+            while (r.ReadLine() != null)
+            {
+                lines++;
+            }
+
+            int[,] inputSquare = new int[lines, lines];
+            r.BaseStream.Seek(0, SeekOrigin.Begin);
+
+            int j = 0;
+            while ((line = r.ReadLine()) != null)
+            {
+                linePieces = line.Split(' ');
+                for (int i = 0; i < linePieces.Length; i++)
+                {
+                    inputSquare[j, i] = int.Parse(linePieces[i]);
+                }
+                j++;
+            }
+
+            r.Close();
+
+            return inputSquare;
+        }
+
+        public static int GetNumDivisors(BigInteger number)
+        {
+            int numDivisors = 0;
+            BigInteger sqrt = (BigInteger)Math.Sqrt((double)number);
+
+            for (int i = 1; i <= sqrt; i++)
+            {
+                if (number % i == 0)
+                {
+                    numDivisors += 2;
+                }
+            }
+            if (sqrt * sqrt == number)
+            {
+                numDivisors--;
+            }
+            return numDivisors;
         }
     }
 }
