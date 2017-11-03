@@ -119,11 +119,11 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
     <Resource Include="Images\pe_logo_default.png" />
-=======
     <Resource Include="Problems\Files\Problem11.txt" />
->>>>>>> 95942f3978b5a0118fea85d395065e37e1905188
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Problems\Files\Problem13.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
