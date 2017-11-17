@@ -11,7 +11,7 @@ namespace ProjectEulerApp
 {
     public class UtilityMethods
     {
-        public static int NumDigits(BigInteger number)
+        public int NumDigits(BigInteger number)
         {
             int numDigits = 0;
 
@@ -24,7 +24,7 @@ namespace ProjectEulerApp
             return numDigits;
         }
 
-        public static List<int> GetDigits(BigInteger number)
+        public List<int> GetDigits(BigInteger number)
         {
             List<int> digits = new List<int>();
 
@@ -36,10 +36,11 @@ namespace ProjectEulerApp
                 number = (number - digit) / 10;
             }
 
+            digits.Reverse();
             return digits;
         }
 
-        public static BigInteger Factorial(int number)
+        public BigInteger Factorial(int number)
         {
             BigInteger factorial = 1;
 
@@ -58,12 +59,12 @@ namespace ProjectEulerApp
             return factorial;
         }
 
-        public static string ToBinary(int number)
+        public string ToBinary(int number)
         {
             return Convert.ToString(number, 2);
         }
 
-        public static bool IsPalindrome(int number)
+        public bool IsPalindrome(int number)
         {
             string numberString = number.ToString();
             char[] numberArray = numberString.ToCharArray();
@@ -79,7 +80,7 @@ namespace ProjectEulerApp
             }
         }
 
-        public static bool IsPalindrome(string number)
+        public bool IsPalindrome(string number)
         {
             char[] numberArray = number.ToCharArray();
             Array.Reverse(numberArray);
@@ -94,7 +95,7 @@ namespace ProjectEulerApp
             }
         }
 
-        public static bool IsPrime(BigInteger number)
+        public bool IsPrime(BigInteger number)
         {
             bool isPrime = false;
 
@@ -121,13 +122,13 @@ namespace ProjectEulerApp
             return isPrime;
         }
 
-        public static bool IsPentagonal(int number)
+        public bool IsPentagonal(int number)
         {
             double penTest = (Math.Sqrt(1 + 24 * number) + 1.0) / 6.0;
             return penTest == ((int)penTest);
         }
 
-        public static int[] ESieve(int upperLimit)
+        public int[] ESieve(int upperLimit)
         {
             int sieveBound = (int)(upperLimit - 1) / 2;
             int upperSqrt = ((int)(Math.Sqrt(upperLimit) - 1) / 2);
@@ -159,7 +160,7 @@ namespace ProjectEulerApp
             return numbers.ToArray();
         }
 
-        public static int[,] readInputTo2DArray(string filename)
+        public int[,] readInputTo2DArray(string filename)
         {
             int lines = 0;
             string line;
@@ -190,7 +191,7 @@ namespace ProjectEulerApp
             return inputSquare;
         }
 
-        public static int GetNumDivisors(BigInteger number)
+        public int GetNumDivisors(BigInteger number)
         {
             int numDivisors = 0;
             BigInteger sqrt = (BigInteger)Math.Sqrt((double)number);

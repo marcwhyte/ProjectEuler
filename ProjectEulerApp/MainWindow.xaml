@@ -55,12 +55,33 @@
                       SelectedValuePath="Value"
                       DisplayMemberPath="Key"
                       SelectedValue="{Binding Path=GetProblems,Mode=OneWay}" 
-                      SelectionChanged="Problem_ComboBox_SelectionChanged"/>
+                      SelectionChanged="Problem_ComboBox_SelectionChanged"
+                      SelectedIndex="0"/>
         </StackPanel>
-        <Label x:Name="ProblemTitle_Label" Grid.Row="2"
+        <DockPanel Grid.Row="2">
+            <Label x:Name="ProblemTitle_Label" 
+                   DockPanel.Dock="Left"
                FontFamily="Arial" FontWeight="DemiBold" FontSize="16" 
                Foreground="#6b4e3d"
                Content="{Binding Title}"/>
+            <DockPanel HorizontalAlignment="Right">
+                <Button x:Name="Previous_Button"
+                        DockPanel.Dock="Left"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Click="Previous_Button_Click">
+                    <Image Source="Images\icon_previous.png" Width="25"/>
+                </Button>
+                <Button x:Name="Next_Button"
+                        DockPanel.Dock="Right"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        Click="Next_Button_Click">
+                    <Image Source="Images\icon_next.png" Width="25"/>
+                </Button>
+            </DockPanel>
+        </DockPanel>
+        
         <TextBox x:Name="ProblemDescription_TextBox" Grid.Row="3"
                  Height="200" 
                  ScrollViewer.CanContentScroll="False"

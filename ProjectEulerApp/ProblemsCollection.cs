@@ -9,7 +9,7 @@ namespace ProjectEulerApp
 {
     class ProblemsCollection
     {
-        public static SortedDictionary<string, IProblem> GetProblems()
+        public SortedDictionary<string, IProblem> GetProblems()
         {
             var instances = from t in Assembly.GetExecutingAssembly().GetTypes()
                             where t.GetInterfaces().Contains(typeof(IProblem))

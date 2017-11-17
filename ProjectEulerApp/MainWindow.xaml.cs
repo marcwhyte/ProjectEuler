@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ProjectEulerApp.Problems;
+using System.Collections;
 
 namespace ProjectEulerApp
 {
@@ -24,17 +25,38 @@ namespace ProjectEulerApp
         public MainWindow()
         {
             InitializeComponent();
+            Problem_ComboBox.SelectedIndex = 0;
         }
 
         private void Calculate_Button_Click(object sender, RoutedEventArgs e)
         {
             IProblem problem = (IProblem)this.DataContext;
             MyAnswer_TextBox.Text = problem.GetAnswer().ToString();
+
+            if (MyAnswer_TextBox.Text != RequiredAnswer_TextBox.Text)
+            {
+                MyAnswer_TextBox.BorderBrush = Brushes.Red; // TODO: change back when correct!
+            }
         }
 
         private void Problem_ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            int index = Problem_ComboBox.SelectedIndex;
             this.DataContext = Problem_ComboBox.SelectedValue;
+            Problem_ComboBox.SelectedIndex = index;
+        }
+
+        private void Next_Button_Click(object sender, RoutedEventArgs e)
+        {
+            Problem_ComboBox.SelectedIndex += 1;
+        }
+
+        private void Previous_Button_Click(object sender, RoutedEventArgs e)
+        {
+            if (Problem_ComboBox.SelectedIndex > 0)
+            {
+                Problem_ComboBox.SelectedIndex -= 1;
+            }            
         }
     }
 }
